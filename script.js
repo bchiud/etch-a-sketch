@@ -36,31 +36,36 @@ const buttonContainer = document.getElementById("button-container");
 buttonContainer.style.width = 2.0 * GAME_WIDTH_PX + "px";
 
 const buttons = document.querySelectorAll(".button");
-buttons.forEach(button => {
+buttons.forEach((button) => {
     button.style.backgroundColor = COLOR_SECONDARY;
     button.style.border = "1px solid " + COLOR_SECONDARY;
 });
 
 const colorButtons = document.querySelectorAll(".color-button");
-colorButtons.forEach(colorButton => {
-    colorButton.addEventListener('click', (event) => {
+colorButtons.forEach((colorButton) => {
+    colorButton.addEventListener("click", (event) => {
         console.log("setting color: " + event.target.dataset.color);
         colorSetting = event.target.dataset.color;
-    })
+    });
 });
 
 const colorSelector = document.querySelector("#color-selector");
 colorSelector.value = COLOR_GREEN;
-colorSelector.addEventListener('input', changeCustomColor);
-colorSelector.addEventListener('change', changeCustomColor);
+colorSelector.addEventListener("input", changeCustomColor);
+colorSelector.addEventListener("change", changeCustomColor);
 
 function changeCustomColor(event) {
-    console.log("setting color: " + event.target.dataset.color + ", " + event.target.value);
+    console.log(
+        "setting color: " +
+            event.target.dataset.color +
+            ", " +
+            event.target.value
+    );
     colorSetting = event.target.dataset.color;
     customColor = event.target.value;
 }
 
-const resetButton = document.querySelector(".reset-button")
+const resetButton = document.querySelector(".reset-button");
 resetButton.onclick = function () {
     resetGame();
 };
@@ -70,11 +75,6 @@ resetButton.onclick = function () {
 const sizeContainer = document.getElementById("size-container");
 sizeContainer.style.width = 0.8 * GAME_WIDTH_PX + "px";
 
-// const sizeSlider = document.createElement("input");
-// sizeSlider.id = "size-slider";
-// sizeSlider.type = "range";
-// sizeSlider.min = "1";
-
 const sizeSlider = document.getElementById("size-slider");
 sizeSlider.max = maxSize;
 sizeSlider.value = size;
@@ -83,8 +83,6 @@ sizeSlider.oninput = function () {
     sizeText.value = size;
     resetGame();
 };
-// sizeSlider.style.margin = "1rem";
-// sizeSlider.style.width = "80%";
 
 sizeContainer.appendChild(sizeSlider);
 
