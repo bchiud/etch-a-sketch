@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <h1 id="title">Etch-A-Sketch</h1>
+        <div id="button-container">
+            <button
+                class="button color-button"
+                data-color="black"
+                type="button"
+            >
+                Black
+            </button>
+            <button class="button color-button" data-color="grey" type="button">
+                Grey
+            </button>
+            <button
+                class="button color-button"
+                data-color="rainbow"
+                type="button"
+            >
+                Rainbow
+            </button>
+            <button
+                class="button color-button custom-button"
+                data-color="custom"
+                type="button"
+            >
+                Custom
+                <input
+                    id="color-selector"
+                    type="color"
+                    data-color="custom"
+                />
+            </button>
+            <button
+                class="button color-button"
+                data-color="eraser"
+                type="button"
+            >
+                Eraser
+            </button>
+            <button
+                class="button reset-button"
+                data-color="reset"
+                type="button"
+            >
+                Reset
+            </button>
+        </div>
+        <div id="size-container">
+            <input id="size-slider" type="range" min="1">
+        </div>
+        <div id="game-container"></div>
+        <script src="script.js"></script>
+    </body>
+</html>
